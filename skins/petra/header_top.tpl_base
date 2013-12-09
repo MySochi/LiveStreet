@@ -4,7 +4,7 @@
 	<ul id="appleNav">
                 {if $oUserCurrent}
                 	<li>
-						<a class="webfonts" href="{cfg name='path.root.web'}" title="{$aLang.topic_title}">&#094;</a>
+						<a class="webfonts" title="{$aLang.user_login_submit}">&#0046;</a>
 							<ul>
 								<li>
 									<span class="webfonts">&#0083;</span>
@@ -54,9 +54,13 @@
                 	</li>
                 {else}
                 	<li>
-                		<a class="webfonts" href="{cfg name='path.root.web'}" title="{$aLang.topic_title}">&#094;</a>
+                		<a class="webfonts" href="{router page='login'}" class="js-login-form-show sign-in" title="{$aLang.user_login_submit}">&#094;</a>
                 	</li>
                 {/if}
+
+                <li {if $sMenuHeadItemSelect=='blog'}class="active"{/if}>
+                	<a href="{cfg name='path.root.web'}" title="{$aLang.topic_title}">{$aLang.topic_title}</a>
+                </li>
 
 				<li {if $sMenuHeadItemSelect=='blogs'}class="active"{/if}>
 					<a href="{router page='blogs'}" title="{$aLang.blogs}">{$aLang.blogs}</a>
@@ -72,10 +76,6 @@
 
                 <li {if $sMenuHeadItemSelect=='qa'}class="active"{/if}>
                 	<a href="{router page='qa'}" title="Q&A">Q&A</a>
-                </li>
-
-                <li {if $sMenuHeadItemSelect=='gallery'}class="active"{/if}>
-                	<a href="{router page='gallery'}" title="Q&A">Галерея</a>
                 </li>
 
                 <li {if $sMenuHeadItemSelect=='companies'}class="active"{/if}>
